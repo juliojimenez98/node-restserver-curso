@@ -4,13 +4,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
+var cors = require("cors");
 var bodyParser = require("body-parser");
 
 //habilitar carpeta public
 app.use(express.static(path.resolve(__dirname, "../public")));
 console.log(path.resolve(__dirname, "../public"));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }), cors());
 
 // parse application/json
 app.use(bodyParser.json());

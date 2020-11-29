@@ -57,6 +57,7 @@ app.post("/login", (req, res) => {
         usuario: usuarioDB,
         token,
       });
+      console.log("Connectado");
     }
   );
 });
